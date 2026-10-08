@@ -4,6 +4,7 @@
 :root {
   --light: #ffffff;
   --foreground: #171717;
+  --bgColor: #f0f5f0;
   --primary:#05893e;
   --shadoColor:#ddd;
 }
@@ -13,4 +14,5 @@
   --color-cForeground:var(--foreground);
   --color-cLight:var(--light);
   --color-shadoColor:var(--shadoColor);
+  --color-bgColor:var(--bgColor);
 }
