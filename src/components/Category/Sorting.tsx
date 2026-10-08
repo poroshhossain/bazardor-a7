@@ -8,7 +8,6 @@ interface SortingProp{
 
 }
 const Sorting = ({sort, setSort}:SortingProp ) => {
-console.log(sort)
     return (
         <Select
             value={sort}
