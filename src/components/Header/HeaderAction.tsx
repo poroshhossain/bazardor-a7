@@ -7,9 +7,9 @@ const HeaderAction = () => {
     const [active, setActive] = useState('signup');
 
     return (
-        <div className="flex gap-3">
-            <Link href={'#'}><Button variant="outline" onClick={() => setActive('signIn')} className={`${active === 'signIn' ? 'bg-cPrimary text-cLight' : ''} text-cForeground`} >সাইন ইন</Button> </Link>
-            <Link href={'#'}><Button variant="outline" onClick={() => setActive('signup')} className={`${active === 'signup' ? 'bg-cPrimary text-cLight' : ''} text-cForeground`} >সাইন আপ</Button></Link>
+        <div className="flex items-center gap-2">
+            <Link href={'#'}><Button variant="outline" onClick={() => setActive('signIn')} className={`${active === 'signIn' ? 'bg-cPrimary text-cLight' : ''} text-cForeground text-[14px] h-0 py-4 rounded-[10px] px-3 `} >সাইন ইন</Button> </Link>
+            <Link href={'#'}><Button variant="outline" onClick={() => setActive('signup')} className={`${active === 'signup' ? 'bg-cPrimary text-cLight' : ''} text-cForeground text-[14px] h-0 py-4 rounded-[10px] px-3 `} >সাইন আপ</Button></Link>
 
         </div>
     )

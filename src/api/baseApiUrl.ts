@@ -1,1 +1,1 @@
-export const baseApiUrl = "https://api.api-store.workers.dev/api/bazardor"
+export const baseApiUrl = "https://api.abcz.workers.dev/api/bazardor"
