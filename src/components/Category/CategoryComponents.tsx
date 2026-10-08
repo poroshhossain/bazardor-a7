@@ -3,6 +3,7 @@ import { getCategoryApi, getCategorySpesificApi } from "@/api/api";
 import { IMenuCategoryType } from "@/type/menuType";
 import { IProductType } from "@/type/type";
 import SortComponent from "./SortComponent";
+import { notFound } from "next/navigation";
 
 type CCProp = {
     params: Promise<{
@@ -13,7 +14,9 @@ type CCProp = {
 const CategoryComponents = async ({ params }: CCProp) => {
     const { slug } = await params;
     const categoryData: IProductType[] = await getCategorySpesificApi(slug);
-
+    if (!categoryData || categoryData.length === 0) {
+        notFound();
+    }
     // find Category
     const allCategoryData: IMenuCategoryType[] = await getCategoryApi();
     const findCategory = allCategoryData.find(C => C.slug === slug);
@@ -30,7 +33,7 @@ const CategoryComponents = async ({ params }: CCProp) => {
                     </div>
                 </div>
 
-                <SortComponent categoryData={categoryData}/>
+                <SortComponent categoryData={categoryData} />
 
             </div>
         </section>
