@@ -42,17 +42,17 @@ const pathname = usePathname();
 
                 {/* Menu */}
                 <ul
-                    className={`mt-2 w-full flex-col gap-2 rounded-xl bg-cLight p-3 shadow-md ${isOpen ? "flex" : "hidden"
-                        } md:flex md:flex-row md:items-center md:gap-4 md:bg-transparent md:p-0 md:shadow-none`}
+                    className={`mt-2 w-full gap-2 flex-col  rounded-xl bg-cLight p-3 shadow-md ${isOpen ? "flex" : "hidden"
+                        } md:flex md:flex-row md:items-center md:bg-transparent md:p-0 md:shadow-none`}
                 >
                     {error && <p>{error}</p>}
 
                     {menuItems?.map((item) => (
-                        <li key={item.id}>
+                        <li key={item.id} className="list-none">
                             <Link
                                 href={`/category/${item.slug}`}
                                 onClick={() => setIsOpen(false)}
-                                className={`flex items-center gap-2 rounded-lg px-3 py-2 ${pathname === `/category/${item.slug}` ? 'bg-cPrimary text-cLight' :''}`}
+                                className={`flex items-center justify-center rounded-lg px-2 py-1 text-[14px] ${pathname === `/category/${item.slug}` ? 'bg-cPrimary text-cLight' :''}`}
                             >
                                 <span>{item.icon}</span>
                                 <span>{item.nameBn}</span>

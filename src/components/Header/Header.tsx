@@ -2,13 +2,17 @@ import { Suspense } from "react"
 import HeaderTop from "./HeaderTop"
 import Navber from "./Navber"
 import LoddingSpinner from "../shared/Spinner"
+import Marque from "../shared/Marque"
 
 const Header = () => {
   return (
     <header>
       <HeaderTop />
-      <Suspense fallback={<LoddingSpinner/> }>
+      <Suspense fallback={<LoddingSpinner />}>
         <Navber />
+      </Suspense>
+      <Suspense fallback={<LoddingSpinner />}>
+        <Marque />
       </Suspense>
     </header>
   )

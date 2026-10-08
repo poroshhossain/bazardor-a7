@@ -1,14 +1,19 @@
 "use client"
 
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { ListBox, Select } from "@heroui/react";
+interface SortingProp{
+    sort:string | null
+      setSort: Dispatch<SetStateAction<string | null>>;
 
-const Sorting = () => {
-    const [sort, setSort] = useState('default');
-
+}
+const Sorting = ({sort, setSort}:SortingProp ) => {
+console.log(sort)
     return (
         <Select
             value={sort}
+            onChange={(value)=> setSort(value as string)}
+            aria-label="সাজান"
             className="flex border border-shadoColor rounded-[10px] ">
             <Select.Trigger>
                 <Select.Value />
