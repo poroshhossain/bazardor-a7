@@ -1,19 +1,22 @@
 
 "use client";
 import SocialBtn from "@/components/shared/SocialBtn";
+import { authClient } from "@/lib/auth-client";
 import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
 
 const SignInPage = () => {
-    const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const data: Record<string, string> = {};
-        // Convert FormData to plain object
-        formData.forEach((value, key) => {
-            data[key] = value.toString();
-        });
-        alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
+        const userData = Object.fromEntries(formData.entries()) as {
+            email: string
+            password: string
+        };
+        const { data } = await authClient.signIn.email({
+            ...userData
+        })
+        console.log(data)
     };
     return (
         <div className="mx-auto flex max-w-7xl flex-col items-center px-4 py-8">
