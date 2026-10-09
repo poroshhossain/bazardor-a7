@@ -15,7 +15,7 @@ The project focuses on displaying products from an API, dynamic category-based n
   * Header actions
 * 📂 Dynamic category-based navigation
 * 📢 Marquee / promotional section
-* 🌐 Dynamic product data fetched from API
+* 🌐 Dynamic product data fetched from API and product details page
 * 🛍️ Responsive product card design
 * 🔎 Product filtering
 * ↕️ Product sorting

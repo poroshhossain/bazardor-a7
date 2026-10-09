@@ -16,3 +16,7 @@
   --color-shadoColor:var(--shadoColor);
   --color-bgColor:var(--bgColor);
 }
+
+html, body{
+  scroll-behavior: smooth;
+}

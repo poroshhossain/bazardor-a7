@@ -28,3 +28,10 @@ export interface IProductType {
         }
     ]
 }
+
+export interface IMarketType {
+    market: string
+    division: string
+    min: number
+    max: number
+}

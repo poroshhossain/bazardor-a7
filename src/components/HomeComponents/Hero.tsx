@@ -1,6 +1,7 @@
 import { Button } from "@heroui/react"
 import CurrentDate from "../shared/CurrentDate"
 import Image from "next/image"
+import Link from "next/link"
 
 
 const Hero = () => {
@@ -31,10 +32,11 @@ const Hero = () => {
                     <p className="pb-5 text-sm leading-3 text-cForeground/70 sm:text-base sm:leading-5">
                         {heroItems.des}
                     </p>
-
-                    <Button className="rounded-[10px] bg-cPrimary text-cLight transition-colors hover:bg-cPrimary/90">
-                        {heroItems.btn}
-                    </Button>
+                    <Link href='#all_products'>
+                        <Button className="rounded-[10px] bg-cPrimary text-cLight transition-colors hover:bg-cPrimary/90">
+                            {heroItems.btn}
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* Hero Image */}
