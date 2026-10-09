@@ -7,16 +7,18 @@ import { usePathname } from "next/navigation"
 const HeaderAction = () => {
     const pathname = usePathname();
 
-    const { data: session } = authClient.useSession();
-    console.log(session)
+    const { data: session, isPending } = authClient.useSession();
+    if (isPending) {
+        return <div>Loading...</div>;
+    }
     return (
         <div className="flex items-center gap-2">
             {
-                session ?(
+                session?.user ? (
                     <>
-                    <div className="">
-                        <p>{session?.user.name}</p>
-                    </div>
+                        <div className="">
+                            <p>{session?.user?.name}</p>
+                        </div>
                     </>
                 ) : (
                     <>
