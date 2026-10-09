@@ -2,7 +2,7 @@ import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "@better-auth/mongo-adapter";
 
-const client = new MongoClient(process.env.DB_HOST as string);
+const client = new MongoClient(process.env.DB_HOST || '');
 const db = client.db("bazardor-a7-db");
 
 export const auth = betterAuth({
