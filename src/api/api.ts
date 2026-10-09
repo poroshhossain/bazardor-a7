@@ -1,8 +1,12 @@
 import { baseApiUrl } from "./baseApiUrl";
 
-export const getAllProductsApi = async()=>{
-    const res = await fetch(`${baseApiUrl}/products`);
-    if(!res.ok){
+export const getAllProductsApi = async () => {
+    const res = await fetch(`${baseApiUrl}/products`, {
+        next: {
+            revalidate: 60,
+        }
+    });
+    if (!res.ok) {
         throw new Error(`Failed to fetch Products: ${res.status}`)
     }
     const data = await res.json();
@@ -10,7 +14,9 @@ export const getAllProductsApi = async()=>{
 }
 
 export const getCategoryApi = async () => {
-    const res = await fetch(`${baseApiUrl}/categories`);
+    const res = await fetch(`${baseApiUrl}/categories`, {
+        cache: 'force-cache'
+    });
     if (!res.ok) {
         throw new Error(`Failed to fetch categories:) ${res.status}`);
     }
@@ -19,7 +25,9 @@ export const getCategoryApi = async () => {
 }
 
 export const getCategorySpesificApi = async (slug: string) => {
-    const res = await fetch(`${baseApiUrl}/products?category=${slug}`);
+    const res = await fetch(`${baseApiUrl}/products?category=${slug}`, {
+       cache:'force-cache'
+    });
     if (!res.ok) {
         throw new Error(`Failed to fetch categories:) ${res.status}`);
     }

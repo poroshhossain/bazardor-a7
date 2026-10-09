@@ -15,7 +15,7 @@ const Marque = async () => {
                             const isdown = item.change.dir === 'down';
 
                             return (
-                                <li key={item.id}> <Link href={`/products/${item.slug}`} className="flex items-center gap-2 font-medium text-[14px] hover:bg-cPrimary/30 py-1 px-2 rounded-[5px]"> <span>{item.image}</span> {item.nameBn} <span>tk/{item.unit}</span> <span className={`${isUp?'text-red-500': isdown?'text-cPrimary' :'' }`}>{item.change.pct}%</span> </Link> </li>
+                                <li key={item.id}> <Link href={`/product/${item.slug}`} className="flex items-center gap-2 font-medium text-[14px] hover:bg-cPrimary/30 py-1 px-2 rounded-[5px]"> <span>{item.image}</span> {item.nameBn} <span>tk/{item.unit}</span> <span className={`${isUp?'text-red-500': isdown?'text-cPrimary' :'' }`}>{item.change.pct}%</span> </Link> </li>
                             )
                         })
                     }

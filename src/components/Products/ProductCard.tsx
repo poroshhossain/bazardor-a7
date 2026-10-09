@@ -12,7 +12,7 @@ const ProductCard = ({ item }: ProductProps) => {
 
     return (
         <article className="group overflow-hidden rounded-2xl border border-shadoColor bg-cLight shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-            <Link href={`/products/${item.slug}`} className="block p-5">
+            <Link href={`/product/${item.slug}`} className="block p-5">
 
                 {/* Product Header */}
                 <div className="flex items-center gap-4">
@@ -33,7 +33,7 @@ const ProductCard = ({ item }: ProductProps) => {
                             <span className="text-cForeground/30">•</span>
 
                             <span className="text-sm text-cForeground/60">
-                                প্রতি কেজি
+                                প্রতি {item.unit}
                             </span>
                         </div>
                     </div>
