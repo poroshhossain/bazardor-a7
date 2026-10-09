@@ -11,9 +11,9 @@ const SignUpPage = () => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData.entries()) as {
-            name: string;
-            email: string;
-            password: string;
+            email: string
+            name: string
+            password: string
         };
         const { data } = await authClient.signUp.email({
             ...userData
