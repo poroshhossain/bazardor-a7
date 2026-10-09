@@ -1,5 +1,6 @@
 import { IProductType } from "@/type/type"
 import Link from "next/link"
+import { RxTriangleDown, RxTriangleRight, RxTriangleUp } from "react-icons/rx"
 
 interface ProductProps {
     item: IProductType
@@ -67,8 +68,8 @@ const ProductCard = ({ item }: ProductProps) => {
                             গতকাল
                         </p>
 
-                        <p className="mt-0.5 text-sm font-bold">
-                            {isUp ? "↑" : isDown ? "↓" : "→"}{" "}
+                        <p className="mt-0.5 text-sm font-bold flex items-center">
+                            {isUp ? <RxTriangleUp /> : isDown ? <RxTriangleDown /> : <RxTriangleRight />}{" "}
                             {item.change.pct}%
                         </p>
                     </div>

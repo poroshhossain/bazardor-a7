@@ -1,4 +1,6 @@
+import DecreamentProduct from "@/components/HomeComponents/DecreamentProduct";
 import Hero from "@/components/HomeComponents/Hero";
+import IncreamentProduct from "@/components/HomeComponents/IncreamentProduct";
 import LoddingSpinner from "@/components/shared/Spinner";
 import { Suspense } from "react";
 
@@ -7,6 +9,14 @@ export default function Home() {
     <>
       <Suspense fallback={<LoddingSpinner/>}>
         <Hero />
+      </Suspense>
+
+      <Suspense fallback={<LoddingSpinner/>}>
+        <IncreamentProduct />
+      </Suspense>
+
+      <Suspense fallback={<LoddingSpinner/>}>
+        <DecreamentProduct />
       </Suspense>
     </>
   );
