@@ -4,7 +4,6 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 const Marque = async () => {
     const marqueData: IProductType[] = await getAllProductsApi();
-    console.log(marqueData)
     return (
         <div className="py-1 px-4 overflow-hidden">
             <Marquee speed={60} pauseOnHover>

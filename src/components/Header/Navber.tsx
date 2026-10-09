@@ -26,7 +26,6 @@ const Navber = () => {
         navberCategory()
     }, []);
 
-    // const [isOpen, setIsOpen] = useState(false)
     const [isOpen , setIsOpen] = useState(false);
 
     return (

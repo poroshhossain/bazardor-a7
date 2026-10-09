@@ -17,7 +17,7 @@ const CurrentDate = () => {
     }, []);
 
 
-    return <p className="text-[12px] text-cForeground">{date}</p>;
+    return <span className="text-[12px]">{date}</span>;
 };
 
 export default CurrentDate;

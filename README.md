@@ -50,9 +50,8 @@ Users can filter products by category and sort products according to available s
 
 * Next.js
 * React
-* TypeScript
 * Tailwind CSS
-* REST API
+* Hero ui
 * JavaScript / TypeScript
 
 ## 📁 Project Structure

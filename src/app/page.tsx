@@ -1,10 +1,13 @@
-import { Button } from "@heroui/react";
+import Hero from "@/components/HomeComponents/Hero";
+import LoddingSpinner from "@/components/shared/Spinner";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
-    <div className="">
-      Home
-
-    </div>
+    <>
+      <Suspense fallback={<LoddingSpinner/>}>
+        <Hero />
+      </Suspense>
+    </>
   );
 }
