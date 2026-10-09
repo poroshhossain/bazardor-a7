@@ -36,7 +36,7 @@ const ProductDetails = async ({ params }: ProductDetailsProps) => {
 
     return (
         <section>
-            <div className="max-w-7xl mx-auto py-4">
+            <div className="max-w-7xl mx-auto px-4">
 
                 {/* Breadcrumb */}
                 <div className="flex items-center gap-2 text-[12px] py-3">

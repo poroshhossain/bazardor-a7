@@ -17,6 +17,6 @@
   --color-bgColor:var(--bgColor);
 }
 
-html, body{
+ body{
   scroll-behavior: smooth;
 }

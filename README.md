@@ -53,7 +53,8 @@ Users can filter products by category and sort products according to available s
 * Tailwind CSS
 * Hero ui
 * JavaScript / TypeScript
-* react-icons
+* react-icons and iconify
+
 
 
 ## 📁 Project Structure

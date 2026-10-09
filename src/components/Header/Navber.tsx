@@ -4,7 +4,7 @@ import { getCategoryApi } from "@/api/api";
 import { IMenuCategoryType } from "@/type/menuType";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import HeaderAction from "./HeaderAction";
 
 const Navber = () => {
@@ -26,10 +26,10 @@ const Navber = () => {
         navberCategory()
     }, []);
 
-    const [isOpen , setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
-       <nav className="border-b border-b-shadoColor py-1">
+        <nav className="border-b border-b-shadoColor py-1">
             <div className="mx-auto max-w-7xl px-4">
 
                 {/* Mobile Header */}
@@ -37,7 +37,7 @@ const Navber = () => {
                     {/* Hamburger */}
                     <button
                         type="button"
-                        onClick={()=> setIsOpen(true)}
+                        onClick={() => setIsOpen(true)}
                         className="flex items-center rounded-lg border border-shadoColor px-2 py-1"
                     >
                         <span className="text-[16px]">☰</span>
@@ -66,10 +66,9 @@ const Navber = () => {
                         md:static md:z-auto md:h-auto md:w-auto
                         md:flex md:flex-row md:items-center
                         md:bg-transparent md:p-0 md:shadow-none
-                        ${
-                            isOpen
-                                ? "translate-x-0 flex"
-                                : "-translate-x-full md:translate-x-0"
+                        ${isOpen
+                            ? "translate-x-0 flex"
+                            : "-translate-x-full md:translate-x-0"
                         }
                     `}
                 >
@@ -95,10 +94,9 @@ const Navber = () => {
                                     flex items-center gap-2
                                     rounded-lg px-3 py-2
                                     text-[16px] font-medium
-                                    ${
-                                        pathname === `/category/${item.slug}`
-                                            ? "bg-cPrimary/75 text-cLight"
-                                            : ""
+                                    ${pathname === `/category/${item.slug}`
+                                        ? "bg-cPrimary/75 text-cLight"
+                                        : ""
                                     }
                                 `}
                             >

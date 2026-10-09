@@ -7,7 +7,9 @@ import Marque from "../shared/Marque"
 const Header = () => {
   return (
     <header>
-      <HeaderTop />
+      <Suspense fallback={<LoddingSpinner/>}>
+        <HeaderTop />
+      </Suspense>
       <Suspense fallback={<LoddingSpinner />}>
         <Navber />
       </Suspense>
