@@ -1,10 +1,12 @@
 "use client"
 
 import { authClient } from "@/lib/auth-client";
+import { ArrowRightFromSquare } from "@gravity-ui/icons";
+import { Button } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
-const LogOutPage = () => {
+const Logout = () => {
   const router = useRouter();
   const handleSignOut = async () => {
 
@@ -19,7 +21,7 @@ const LogOutPage = () => {
     });
   }
   return (
-    <p onClick={handleSignOut} className="text-[12px] text-cPrimary cursor-pointer">log Out</p>
+    <Button variant="ghost" onClick={handleSignOut} className="text-[12px] text-cPrimary cursor-pointer flex items-center"><ArrowRightFromSquare/> সাইন আউট</Button>
   )
 }
-export default LogOutPage
+export default Logout
