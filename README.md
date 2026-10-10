@@ -5,7 +5,7 @@
 ## ✨ Key Features
 
 1. **Responsive Homepage** — A clean, modern UI with a header, promotional marquee, and product sections.
-2. **User Authentication** — Sign up, sign in, and sign out using Better Auth, with email and supported social login options.
+2. **User Authentication** — Sign up, sign in, and sign out using Better Auth, with email and supported social login options also profile update.
 3. **Dynamic Category Navigation** — Display product categories dynamically for easy browsing.
 4. **API-Based Product Display** — Fetch products from an API and view individual product details.
 5. **Product Filtering & Sorting** — Filter products by category and sort them using available options.
