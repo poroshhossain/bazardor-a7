@@ -12,6 +12,7 @@ The project focuses on displaying products from an API, dynamic category-based n
   * Logo
   * Login
   * Sign Up
+  * better auth feature sign in, sign up, logout, throwemail, google, github
   * Header actions
 * 📂 Dynamic category-based navigation
 * 📢 Marquee / promotional section
