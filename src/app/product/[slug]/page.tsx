@@ -1,5 +1,5 @@
 import ProductDetails from "@/components/Products/ProductDetails"
-import LoddingSpinner from "@/components/shared/Spinner"
+import SkeletonProductDetailsPage from "@/components/Products/ProductSkeleton"
 import { Suspense } from "react"
 
 
@@ -12,8 +12,8 @@ interface ProductDetailsPageProps {
 const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
   return (
     <>
-      <Suspense fallback={<LoddingSpinner />}>
-        <ProductDetails  params={params}/>
+      <Suspense fallback={<SkeletonProductDetailsPage />}>
+        <ProductDetails params={params} />
       </Suspense>
     </>
   )
