@@ -1,1 +1,1 @@
-export const baseApiUrl = "https://openapi.programming-hero.com/api/bazardor"
+export const baseApiUrl ="https://openapi.programming-hero.com/api/bazardor"
