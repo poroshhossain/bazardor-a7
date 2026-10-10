@@ -30,7 +30,7 @@ export default function CategorySkeleton() {
             {Array.from({ length: 6 }).map((_, index) => (
               <div
                 key={index}
-                className="rounded-2xl border border-gray-200 bg-white p-4"
+                className="rounded-2xl border border-shadoColor/30 bg-cLight p-4"
               >
                 {/* Product Image */}
                 <Skeleton className="h-40 w-full rounded-xl" />
