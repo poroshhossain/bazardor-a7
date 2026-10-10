@@ -1,5 +1,5 @@
 import CategoryComponents from "@/components/Category/CategoryComponents"
-import CategorySkeleton from "@/components/shared/CategorySkeleton"
+import CategorySkeleton from "@/components/Category/CategorySkeleton"
 import { Suspense } from "react"
 
 type CategoryWisePageProp = {
