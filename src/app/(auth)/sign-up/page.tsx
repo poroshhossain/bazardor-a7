@@ -4,21 +4,38 @@ import SocialBtn from "@/components/shared/SocialBtn";
 import { authClient } from "@/lib/auth-client";
 import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 
 const SignUpPage = () => {
+    const router = useRouter();
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
         const userData = Object.fromEntries(formData.entries()) as {
             email: string
             name: string
             password: string
+            confirmPassword: string
         };
-        const { data } = await authClient.signUp.email({
-            ...userData
+        const { data, error } = await authClient.signUp.email({
+            ...userData,
+            
         })
-        console.log(data)
+        if (error) {
+            toast.error(error.message || "অ্যাকাউন্ট তৈরি করা যায়নি");
+            return
+        }
+        if (data) {
+            toast.success(`অ্যাকাউন্ট তৈরি হয়েছে:${data.user.email}`);
+            router.push('/sign-in');
+            form.reset()
+
+
+        }
     };
 
     return (
@@ -58,6 +75,7 @@ const SignUpPage = () => {
                         isRequired
                         name="email"
                         type="email"
+                        aria-label="email"
                         validate={(value) =>
                             /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)
                                 ? null

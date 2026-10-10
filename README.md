@@ -54,6 +54,7 @@ Users can filter products by category and sort products according to available s
 * Hero ui
 * JavaScript / TypeScript
 * react-icons and iconify
+* react-toastify
 
 
 
