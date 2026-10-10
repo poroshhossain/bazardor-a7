@@ -1,5 +1,5 @@
 import CategoryComponents from "@/components/Category/CategoryComponents"
-import LoddingSpinner from "@/components/shared/Spinner"
+import CategorySkeleton from "@/components/shared/CategorySkeleton"
 import { Suspense } from "react"
 
 type CategoryWisePageProp = {
@@ -10,7 +10,7 @@ type CategoryWisePageProp = {
 const CategoryWisePage = async ({ params }: CategoryWisePageProp) => {
   return (
     <>
-      <Suspense fallback={<LoddingSpinner />}>
+      <Suspense fallback={<CategorySkeleton />}>
         <CategoryComponents params={params} />
       </Suspense>
     </>
