@@ -1,15 +1,17 @@
 "use client"
+import LogOutPage from "@/app/(auth)/logout/page"
 import { authClient } from "@/lib/auth-client"
 import { Button } from "@heroui/react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import LoddingSpinner from "../shared/Spinner"
 
 const HeaderAction = () => {
     const pathname = usePathname();
 
     const { data: session, isPending } = authClient.useSession();
     if (isPending) {
-        return <div>Loading...</div>;
+        return <LoddingSpinner/>;
     }
     return (
         <div className="flex items-center gap-2">
@@ -18,6 +20,7 @@ const HeaderAction = () => {
                     <>
                         <div className="">
                             <p>{session?.user?.name}</p>
+                            <LogOutPage/>
                         </div>
                     </>
                 ) : (

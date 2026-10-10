@@ -4,8 +4,11 @@ import SocialBtn from "@/components/shared/SocialBtn";
 import { authClient } from "@/lib/auth-client";
 import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
+    const router = useRouter();
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -13,10 +16,19 @@ const SignInPage = () => {
             email: string
             password: string
         };
-        const { data } = await authClient.signIn.email({
+        const { data , error} = await authClient.signIn.email({
             ...userData
         })
-        console.log(data)
+        if (error) {
+            toast.error(error.message || "লগইন করা যায়নি");
+            return
+        }
+        if (data) {
+            toast.success(`লগইন সফল হয়েছে:${data.user.email}`);
+            router.push('/profile')
+
+
+        }
     };
     return (
         <div className="mx-auto flex max-w-7xl flex-col items-center px-4 py-8">
@@ -40,6 +52,7 @@ const SignInPage = () => {
                         isRequired
                         name="email"
                         type="email"
+                        aria-label="email"
                         validate={(value) =>
                             /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)
                                 ? null
@@ -93,7 +106,7 @@ const SignInPage = () => {
                     <SocialBtn />
                 </div>
                 {/* Sign In */}
-                <p className="mt-4 text-center text-sm text-cForeground/70"> অ্যাকাউন্ট নেই? <Link href="/sign-in" className="font-semibold text-cPrimary underline-offset-4 hover:underline" > সাইন আপ করুন </Link> </p>
+                <p className="mt-4 text-center text-sm text-cForeground/70"> অ্যাকাউন্ট নেই? <Link href="/sign-up" className="font-semibold text-cPrimary underline-offset-4 hover:underline" > সাইন আপ করুন </Link> </p>
             </div>
             {/* Back to Home */}
             <Link href="/" className="mt-6 text-sm font-medium text-cForeground/60 transition-colors hover:text-cPrimary" > ← হোম পেজে ফিরে যান </Link>
